@@ -1,1 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Frases Motivadoras</title>
+    <style>
+        /* Estilos para que se vea genial */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .contenedor {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            max-width: 400px;
+        }
+
+        h1 { font-size: 1.2rem; opacity: 0.8; }
+
+        #frase-texto {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 20px 0;
+            min-height: 80px;
+        }
+
+        button {
+            background-color: #ff758c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: transform 0.2s;
+        }
+
+        button:hover { transform: scale(1.05); }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h1>✨ Inspiración del momento</h1>
+        <p id="frase-texto">Haz clic para empezar...</p>
+        <button onclick="nuevaFrase()">Nueva Frase</button>
+    </div>
+
+    <script>
+        const frases = [
+            "El éxito es la suma de pequeños esfuerzos repetidos día tras día.",
+            "No te detengas hasta que te sientas orgulloso.",
+            "Tu único límite es tu mente.",
+            "Si puedes imaginarlo, puedes lograrlo.",
+            "La disciplina te llevará donde la motivación no alcance.",
+            "Cree en ti y todo será posible."
+        ];
+
+        function nuevaFrase() {
+            const indice = Math.floor(Math.random() * frases.length);
+            document.getElementById("frase-texto").innerText = frases[indice];
+        }
+    </script>
+
+</body>
+</html>
 
