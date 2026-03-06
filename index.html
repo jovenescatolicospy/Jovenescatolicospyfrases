@@ -2,77 +2,176 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Frases Motivadoras</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspiración - El Show de Jóvenes Católicos</title>
     <style>
-        /* Estilos para que se vea genial */
+        /* Estilos inspirados en la 4ta Temporada */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: linear-gradient(135deg, #1a4a8e 0%, #002d72 100%);
+            color: #333;
         }
 
-        .contenedor {
+        .card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
             text-align: center;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-            max-width: 400px;
+            max-width: 90%;
+            width: 400px;
+            border-bottom: 10px solid #ffcc00; /* Detalle en amarillo/oro */
         }
 
-        h1 { font-size: 1.2rem; opacity: 0.8; }
-
-        #frase-texto {
-            font-size: 1.5rem;
+        .logo-placeholder {
             font-weight: bold;
-            margin: 20px 0;
-            min-height: 80px;
+            color: #1a4a8e;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        h2 {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+
+        #frase {
+            font-size: 1.3rem;
+            font-weight: 500;
+            line-height: 1.6;
+            color: #1a4a8e;
+            margin: 30px 0;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
         }
 
         button {
-            background-color: #ff758c;
+            background-color: #1a4a8e;
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            cursor: pointer;
+            padding: 15px 30px;
+            border-radius: 50px;
             font-size: 1rem;
-            transition: transform 0.2s;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(26, 74, 142, 0.4);
+            transition: transform 0.2s, background 0.3s;
         }
 
-        button:hover { transform: scale(1.05); }
+        button:hover {
+            background-color: #002d72;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 0.75rem;
+            color: #999;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
     </style>
 </head>
 <body>
 
-    <div class="contenedor">
-        <h1>✨ Inspiración del momento</h1>
-        <p id="frase-texto">Haz clic para empezar...</p>
-        <button onclick="nuevaFrase()">Nueva Frase</button>
+    <div class="card">
+        <span class="logo-placeholder">El Show de</span>
+        <img src="https://via.placeholder.com/150x50?text=JÓVENES+CATÓLICOS" alt="Logo" style="max-width: 200px; margin-bottom: 10px; display: none;">
+        <h1 style="color: #1a4a8e; margin: 0; font-size: 1.8rem;">JÓVENES CATÓLICOS</h1>
+        <h2>4TA TEMPORADA</h2>
+
+        <div id="frase">"Presiona el botón para descubrir un mensaje especial"</div>
+
+        <button onclick="generarMensaje()">DESCUBRIR SORPRESA</button>
+
+        <div class="footer">
+            @jovenescatolicospy<br>
+            ¡Gracias por ser parte de nuestra historia!
+        </div>
     </div>
 
     <script>
-        const frases = [
-            "El éxito es la suma de pequeños esfuerzos repetidos día tras día.",
-            "No te detengas hasta que te sientas orgulloso.",
-            "Tu único límite es tu mente.",
-            "Si puedes imaginarlo, puedes lograrlo.",
-            "La disciplina te llevará donde la motivación no alcance.",
-            "Cree en ti y todo será posible."
+        const mensajes = [
+            "¡Gracias por ser parte de esta 4ta temporada!",
+            "La alegría de ser joven es un regalo para compartir.",
+            "No tengan miedo de ser los santos del nuevo milenio.",
+            "Donde hay fe, hay amor; donde hay amor, hay paz.",
+            "Tu presencia hace la diferencia en esta comunidad.",
+            "La esperanza es el ancla que nos mantiene firmes.",
+            "Cristo vive y te quiere vivo.",
+            "Sé luz en medio de la oscuridad.",
+            "La oración es la llave que abre todas las puertas.",
+            "Nada te turbe, nada te espante, Dios solo basta.",
+            "Haz las cosas pequeñas con un gran amor.",
+            "La santidad consiste en estar siempre alegres.",
+            "Ser joven no es un tiempo, es un estado del corazón.",
+            "Dios no elige a los capaces, capacita a los elegidos.",
+            "Camina con los pies en la tierra y el corazón en el cielo.",
+            "La fe mueve montañas, pero el amor mueve corazones.",
+            "No busques entender para creer, sino creer para entender.",
+            "El amor de Dios es el motor que nos impulsa.",
+            "Donde no hay amor, pon amor y sacarás amor.",
+            "La vida es un regalo, vívela con gratitud.",
+            "Tu misión empieza donde terminan tus miedos.",
+            "Dios tiene un plan perfecto para tu vida.",
+            "No te canses de hacer el bien.",
+            "La verdadera libertad se encuentra en el servicio.",
+            "Busca a Dios en las cosas sencillas de cada día.",
+            "Eres una obra maestra en las manos del Creador.",
+            "Que tu vida sea un reflejo del amor de Cristo.",
+            "La paz comienza con una sonrisa.",
+            "No caminas solo, Dios siempre está a tu lado.",
+            "El perdón es el camino a la verdadera paz.",
+            "Confía en el proceso, Dios está trabajando en ti.",
+            "Sé valiente y sigue tu llamado.",
+            "La humildad es el fundamento de todas las virtudes.",
+            "Cada día es una nueva oportunidad para amar.",
+            "La palabra de Dios es lámpara para tus pasos.",
+            "No te desanimes, lo mejor está por venir.",
+            "La amistad es un tesoro que debemos cuidar.",
+            "Dios es amor y quien permanece en el amor, permanece en Dios.",
+            "Vive de tal manera que otros quieran conocer a Cristo por ti.",
+            "La gratitud transforma lo que tenemos en suficiente.",
+            "El mundo necesita tu alegría y tu entusiasmo.",
+            "No pongas límites a lo que Dios puede hacer en ti.",
+            "La caridad es el distintivo del cristiano.",
+            "Busca siempre la verdad y la justicia.",
+            "Que el Espíritu Santo guíe cada una de tus decisiones.",
+            "La paciencia es la madre de todas las ciencias.",
+            "El sacrificio de hoy es el triunfo del mañana.",
+            "Nunca es tarde para volver a empezar con Dios.",
+            "Siembra esperanza y cosecharás bendiciones.",
+            "¡Sigamos haciendo historia en esta 4ta temporada!"
         ];
 
-        function nuevaFrase() {
-            const indice = Math.floor(Math.random() * frases.length);
-            document.getElementById("frase-texto").innerText = frases[indice];
+        function generarMensaje() {
+            const fraseElemento = document.getElementById("frase");
+            
+            // Efecto de desvanecimiento simple
+            fraseElemento.style.opacity = 0;
+            
+            setTimeout(() => {
+                const index = Math.floor(Math.random() * mensajes.length);
+                fraseElemento.innerText = mensajes[index];
+                fraseElemento.style.opacity = 1;
+            }, 200);
         }
     </script>
-
 </body>
 </html>
-
